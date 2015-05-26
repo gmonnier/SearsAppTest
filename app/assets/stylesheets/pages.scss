@@ -1,3 +1,18 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.topBar {
+	height: 100px;
+	width: 100%;
+	background: rgb(50,50,50);
+	background: linear-gradient(to bottom, #f8ffe8 0%,#e3f5ab 0%,#b7df2d 47%); /* W3C */
+	box-shadow: 0px 6px 21px 1px rgba(0,0,0,0.75);
+	z-index: 100;
+}
+
+.content {
+	background: rgba(0,0,0,0);
+	padding: 10px;
+}
+
