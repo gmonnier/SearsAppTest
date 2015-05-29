@@ -8,6 +8,7 @@
 		<%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
 		<%= csrf_meta_tags %>
 	</head>
+
 	<body>
 		<header class="topBar">
 			<span class="helper"></span>
@@ -15,7 +16,7 @@
 			<nav>
 				<ul>
 					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Sign in", '#' %></li>
+					<li id="j_signup_action"><%= link_to "Sign up", '#' %></li>
 					<li><%= link_to "About", about_path %></li>
 					<li><%= link_to "Contact", contact_path %></li>
 					<li><%= link_to "Help", help_path %></li>
@@ -29,6 +30,7 @@
 
 		<%= render 'layouts/footer' %>
 		<%= debug(params) if Rails.env.development? %>
+		<%= render 'layouts/signup_dial' %>
 
 	</body>
 	</html>
