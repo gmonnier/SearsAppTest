@@ -1,0 +1,11 @@
+<table class="profile" summary="Information profil">
+	<tr>
+		<td class="main">
+			<h1><img src="<%= @gravatar_link %>" alt"Gravatar" class="gravatar"></img><%=@user.name%></h1>
+		</td>
+		<td class="sidebar round">
+			<strong>Name</strong> <%= @user.name %> <br/>
+			<strong>URL</strong> <%= link_to user_path(@user), @user %>
+		</td>
+	</tr>
+</table>
