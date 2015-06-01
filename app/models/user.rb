@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
 
 	before_save :encrypt_pwd
 
+
 	# Check wether submited password is compliant with saved password for this user.
 	def has_pwd?(input_pwd)
 		encrypted_pwd == encrypt(input_pwd);

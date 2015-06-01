@@ -35,8 +35,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development  do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
 
   # Annotations module for model classes description.
   gem 'annotate'
@@ -47,21 +45,23 @@ group :development  do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  # RSpec rails framework for dev purposes
-  gem 'rspec-rails'
 end
 
 group :test do
 
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
   gem 'rspec'
-
-  gem 'webrat'
 
   gem 'capybara'
 
   gem 'factory_girl_rails'
 
+end
+
+group :development, :test do
+
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+
+  # RSpec rails framework for dev purposes
+  gem 'rspec-rails'
 end

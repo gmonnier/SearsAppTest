@@ -16,7 +16,7 @@
 			<nav>
 				<ul>
 					<li><%= link_to "Home", root_path %></li>
-					<li id="j_signup_action"><%= link_to "Sign up", '#' %></li>
+					<li id="j_signin_action"><%= link_to "Sign in", '#' %></li>
 					<li><%= link_to "About", about_path %></li>
 					<li><%= link_to "Contact", contact_path %></li>
 					<li><%= link_to "Help", help_path %></li>
@@ -25,12 +25,15 @@
 		</header>
 
 		<div class="content">
+			<% flash.each do |key, value| %>
+          		<%= content_tag(:div, value, :class => "flash #{key}") %>
+        	<% end %>
 			<%= yield %>
 		</div>
 
 		<%= render 'layouts/footer' %>
 		<%= debug(params) if Rails.env.development? %>
-		<%= render 'layouts/signup_dial' %>
+		<%= render 'layouts/signin_dial' %>
 
 	</body>
 	</html>

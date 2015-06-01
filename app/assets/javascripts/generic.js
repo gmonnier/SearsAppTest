@@ -1,8 +1,8 @@
 $(document).ready(function(){
-	$('#signup_dial').hide();
+	$('#signin_dial').hide();
 
-	$('#j_signup_action').click(
+	$('#j_signin_action').click(
 		function() {
-			$('#signup_dial').dialog();
+			$('#signin_dial').dialog();
 	});
 });
