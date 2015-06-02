@@ -49,4 +49,8 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include Capybara::DSL
+
+  def test_sign_in(user)
+    controller.sign_in(user)
+  end
 end

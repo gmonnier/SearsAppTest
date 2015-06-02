@@ -15,7 +15,15 @@ $top-bar-height: 100px;
 
 .topBar nav{
 	float: right;
+	display: block;
 	line-height: $top-bar-height;
+}
+
+.topBar #currentUser{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	display:block;
 }
 
 .topBar li{

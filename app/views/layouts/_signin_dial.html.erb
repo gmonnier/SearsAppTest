@@ -2,6 +2,18 @@
 
 <div id="signin_dial" title="Sign in now">
 	<p>
-		This is the signin dialog
+		<%= form_for(:session, :url => sessions_path) do |f| %>
+			<div class="field">
+				<%= f.label :email, "E-mail" %>
+				<%= f.text_field :email %>
+			</div>
+			<div class="field">
+				<%= f.label :pwd, "Pwd" %>
+				<%= f.password_field :pwd %>
+			</div>
+			<div class="actions">
+				<%= f.submit "Log in" %>
+			</div>
+		<% end %>
 	</p>
 </div>

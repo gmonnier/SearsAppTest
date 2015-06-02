@@ -76,5 +76,11 @@ RSpec.describe UsersController, type: :controller do
         post :create, :user => @attr
         flash[:success].should =~ /Welcome in the application/i
       end
+
+      it "Should sign in user aftewards" do
+      	post :create, :user => @attr
+      	controller.should be_signed_in
+      end
+
     end
 end
