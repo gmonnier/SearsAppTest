@@ -1,0 +1,26 @@
+<div id="editprofil_dial" title="Edit profil">
+	<p>
+		<%= form_for @user,:remote => true, :url => user_path(current_user), :method => 'PUT' do |f| %>
+		<%= render 'shared/error_messages', :object => f.object %>
+		<div class="field">
+			<%= f.label :name %><br />
+			<%= f.text_field :name , :value => current_user.name%>
+		</div>
+		<div class="field">
+			<%= f.label :email %><br />
+			<%= f.text_field :email, :value => current_user.email %>
+		</div>
+		<div class="field">
+			<%= f.label :pwd , "Password" %><br />
+			<%= f.password_field :pwd %>
+		</div>
+		<div class="field">
+			<%= f.label :pwd_confirmation, "Confirmation" %><br />
+			<%= f.password_field :pwd_confirmation %>
+		</div>
+		<div class="actions">
+			<%= f.submit "Update" %>
+		</div>
+		<% end %>
+	</p>
+</div>

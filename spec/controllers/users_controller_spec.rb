@@ -7,6 +7,7 @@ RSpec.describe UsersController, type: :controller do
 
 		before(:each) do
 			@user = FactoryGirl.create(:user)
+			test_sign_in(@user)
 		end
 
 		it "Should succeed" do

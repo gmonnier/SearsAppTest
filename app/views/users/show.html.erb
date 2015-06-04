@@ -8,4 +8,10 @@
 			<strong>URL</strong> <%= link_to user_path(@user), @user %>
 		</td>
 	</tr>
+	<tr>
+		<td id="j_editprofil_action" ><%= link_to "Edit Profil", '#' , :class => "editprofil_button"%></td>
+	</tr>
 </table>
+
+<%= render 'layouts/editprofile_dial' %>
+

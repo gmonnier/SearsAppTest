@@ -5,4 +5,11 @@ $(document).on("page:change", function(){
 		function() {
 			$('#signin_dial').dialog();
 	});
+
+	$('#editprofil_dial').hide();
+
+	$('#j_editprofil_action').click(
+		function() {
+			$('#editprofil_dial').dialog();
+	});
 });
