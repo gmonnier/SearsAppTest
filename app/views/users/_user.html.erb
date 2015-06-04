@@ -1,0 +1,1 @@
+<li><%= image_tag(controller.getGravatarLink user.email, 25) %> <%= image_tag('user/user_admin.png') if user.is_admin? %> <%= user.id %> <%= link_to user.name, user %> | <%= link_to "Delete", user_path(user) , :method => 'DELETE' %></li>

@@ -1,0 +1,10 @@
+<div id="user_content">
+	<h1>Registered Users</h1>
+
+	<%= will_paginate @users %>
+	<ul>
+		<%= render partial: "user", collection: @users %>
+	</ul>
+	<%= will_paginate @users %>
+
+</div>

@@ -9,6 +9,7 @@
 #  updated_at    :datetime         not null
 #  encrypted_pwd :string
 #  salt          :string
+#  admin         :boolean
 #
 
 require 'digest'
@@ -48,6 +49,10 @@ class User < ActiveRecord::Base
 	def self.authenticate_with_salt(id, cookie_salt)
 	    user = find_by_id(id)
 	    (user && user.salt == cookie_salt) ? user : nil
+  	end
+
+  	def is_admin?
+  		admin
   	end
 
 	private 

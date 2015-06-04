@@ -5,9 +5,32 @@ class UsersController < ApplicationController
 
 	before_filter :correct_user, :only => [:show]
 
+	def index
+		@title = "Regisetred Users"
+		@users = User.paginate(:page => params[:page], :per_page => 10)
+	end
+
 	def new
 		@title = "Sign up..."
 		@user = User.new
+	end
+
+	def destroy
+
+		if current_user && current_user.is_admin?
+			user = User.find(params[:id])
+			if user.destroy
+				flash.now[:success] = "User #{user.name} deleted sucessfully"
+			else
+				flash.now[:error] = "User #{user.name} not deleted"
+			end
+		else
+			flash.now[:error] = "You need to be authenticated as an admin to delete users"
+		end
+		
+		@title = "Regisetred Users"
+		@users = User.paginate(:page => params[:page], :per_page => 10)
+		render :index
 	end
 
 	def show
@@ -55,6 +78,12 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def getGravatarLink(email, size = 50)
+		# Create the hash from the e-mail - MD5 encryption
+		hash = Digest::MD5.hexdigest(email)
+		"http://www.gravatar.com/avatar/#{hash}?s=#{size}"
+	end
+
 	private
 
 	def correct_user
@@ -66,10 +95,6 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:name, :email, :pwd, :pwd_confirmation)
 	end
 
-	def getGravatarLink(email)
-		# Create the hash from the e-mail - MD5 encryption
-		hash = Digest::MD5.hexdigest(email)
-		"http://www.gravatar.com/avatar/#{hash}?s=50"
-	end
+	
 end
 

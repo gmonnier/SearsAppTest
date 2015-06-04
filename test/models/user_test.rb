@@ -9,6 +9,7 @@
 #  updated_at    :datetime         not null
 #  encrypted_pwd :string
 #  salt          :string
+#  admin         :boolean
 #
 
 require 'test_helper'

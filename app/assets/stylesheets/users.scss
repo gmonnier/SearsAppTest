@@ -27,8 +27,18 @@ td.sidebar {
   margin-right: 20px;
 }
 
-#newcontent {
+#newcontent,#user_content {
   padding:20px;  
+}
+
+
+#user_content li {
+  padding : 10px;
+  list-style-type: none;
+}
+
+#user_content li img{
+  vertical-align : middle;
 }
 
 div.field, div.actions {
